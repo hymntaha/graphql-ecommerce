@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text,Heading,Image } from "gestalt";
+import { Box, Text, Heading, Image } from "gestalt";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => (
@@ -18,10 +18,19 @@ const Navbar = () => (
       </Text>
     </NavLink>
     <NavLink to="/">
-      <Image src"./icons/logo.svg" alt="BrewHaha Logo" naturalHeight={1} naturalWidth={1}/>
-      <Heading size="xs" color="orange">
-        BrewHaha
-      </Heading>
+      <Box display="flex" alignItems="center">
+        <Box margin={1} height={50} width={50}>
+          <Image
+            src="./icons/logo.svg"
+            alt="BrewHaha Logo"
+            naturalHeight={1}
+            naturalWidth={1}
+          />
+        </Box>
+        <Heading size="xs" color="orange">
+          BrewHaha
+        </Heading>
+      </Box>
     </NavLink>
     <NavLink to="/signup">
       <Text size="xl" color="white">
