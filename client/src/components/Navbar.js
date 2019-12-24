@@ -17,7 +17,7 @@ const Navbar = () => (
         Sign In
       </Text>
     </NavLink>
-    <NavLink to="/">
+    <NavLink  activeClassName="active" exact to="/">
       <Box display="flex" alignItems="center">
         <Box margin={1} height={50} width={50}>
           <Image
@@ -32,7 +32,7 @@ const Navbar = () => (
         </Heading>
       </Box>
     </NavLink>
-    <NavLink to="/signup">
+    <NavLink activeClassName="active" to="/signup">
       <Text size="xl" color="white">
         Sign Up
       </Text>
