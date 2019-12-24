@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
+import {Container,Box, Heading} from "gestalt";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        App
-      </div>
+      <Container>
+        <Box
+          display='flex'
+          justifyContent='center'
+          marginBottom={2}
+        >
+          <Heading color='midnight' size='md'>
+            Brew Brands
+          </Heading>
+        </Box>
+      </Container>
     );
   }
 }
