@@ -8,9 +8,10 @@ const strapi = new Strapi(apiUrl);
 
 class App extends Component {
   async componentDidMount(){
-    const response = await strapi.request('POST', '/graphql',{
-      data:{
-        query: `query{
+    try{
+      const response = await strapi.request('POST', '/graphql',{
+        data:{
+          query: `query{
           brands {
             _id
             name
@@ -18,12 +19,17 @@ class App extends Component {
             createdAt
             image{
               name
+              url
             }
           }
         }`
-      }
-    });
-    console.log(response);
+        }
+      });
+      console.log(response);
+    } catch(err){
+      console.log(err)
+    }
+
   }
   render() {
     return (
