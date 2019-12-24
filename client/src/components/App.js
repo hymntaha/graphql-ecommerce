@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import {Container,Box, Heading,Card,Image, Text} from "gestalt";
 import Strapi from "strapi-sdk-javascript/build/main";
+import {Link} from "react-router-dom";
+
 
 const apiUrl = process.env.API_URL || 'http://localhost:1337';
 const strapi = new Strapi(apiUrl);
@@ -53,7 +55,9 @@ class App extends Component {
                   <Image src={`${apiUrl}${brand.image.url}`} alt='Brand' naturalWidth={1} naturalHeight={1}/>
                 </Box>
               }>
-
+                <Text size='xl'>{brand.name}</Text>
+                <Text>{brand.description}</Text>
+                <Text size='xl'><Link to={`/${brand._id}`}>See Brews</Link></Text>
               </Card>
             </Box>
           ))}
