@@ -47,7 +47,7 @@ class App extends Component {
             Brew Brands
           </Heading>
         </Box>
-        <Box display='flex' justifyContent='around'>
+        <Box wrap display='flex' justifyContent='around'>
           {brands.map(brand=>(
             <Box margin={2} width={200} key={brand._id}>
               <Card image={
