@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Container, Box, Heading, Card, Image, Text } from "gestalt";
+import {
+  Container,
+  Box,
+  Heading,
+  Card,
+  Image,
+  Text,
+  SearchField,
+  Icon
+} from "gestalt";
 import Strapi from "strapi-sdk-javascript/build/main";
 import { Link } from "react-router-dom";
 
@@ -11,6 +20,11 @@ class App extends Component {
   state = {
     brands: []
   };
+
+  handleChange = ({value}) =>{
+    this.setState({searchTerm: value})
+
+  }
   async componentDidMount() {
     try {
       const response = await strapi.request("POST", "/graphql", {
@@ -33,9 +47,20 @@ class App extends Component {
     }
   }
   render() {
-    const { brands } = this.state;
+    const { brands, searchTerm } = this.state;
     return (
       <Container>
+        <Box display="flex" justifyContent="center" marginTop={4}>
+          <SearchField
+            id="searchField"
+            accessibilityLabel="Brands Search Field"
+            onChange={this.handleChange}
+            placeholder="Search Brands"
+          />
+          <Box margin={3}>
+            <Icon icon="filter" color={searchTerm ? 'orange': 'gray'} size={20} accessibilityLabel="Filter"/>
+          </Box>
+        </Box>
         <Box display="flex" justifyContent="center" marginBottom={2}>
           <Heading color="midnight" size="md">
             Brew Brands
