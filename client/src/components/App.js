@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Loader from './Loader'
 import {
   Container,
   Box,
@@ -120,7 +121,8 @@ class App extends Component {
             </Box>
           ))}
         </Box>
-        <Spinner show={loadingBrands} accessibilityLabel="Loading Spinner" />
+        {/*<Spinner show={loadingBrands} accessibilityLabel="Loading Spinner" />*/}
+        {loadingBrands && <Loader/>}
       </Container>
     );
   }
