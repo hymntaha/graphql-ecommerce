@@ -1,9 +1,12 @@
-html,body {
-  margin:0;
+html,
+body {
+  margin: 0;
   background-color: #f6f9fc;
 }
 
-a, a:link. a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none;
 }
 
