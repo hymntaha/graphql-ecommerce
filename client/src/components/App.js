@@ -8,7 +8,8 @@ import {
   Image,
   Text,
   SearchField,
-  Icon
+  Icon,
+  Spinner
 } from "gestalt";
 import Strapi from "strapi-sdk-javascript/build/main";
 import { Link } from "react-router-dom";
@@ -116,6 +117,7 @@ class App extends Component {
             </Box>
           ))}
         </Box>
+        <Spinner show={loadingBrands} accessibilityLabel="Loading Spinner" />
       </Container>
     );
   }
