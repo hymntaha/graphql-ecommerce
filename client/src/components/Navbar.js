@@ -10,21 +10,24 @@ const Navbar = () => (
     height={70}
     color="midnight"
     padding={1}
-    shape={"roundedBottom"}
+    shape="roundedBottom"
   >
-    <NavLink to="/signin">
+    {/* Sign In Link */}
+    <NavLink activeClassName="active" to="/signin">
       <Text size="xl" color="white">
         Sign In
       </Text>
     </NavLink>
-    <NavLink  activeClassName="active" exact to="/">
+
+    {/* Title and Logo */}
+    <NavLink activeClassName="active" exact to="/">
       <Box display="flex" alignItems="center">
-        <Box margin={1} height={50} width={50}>
+        <Box margin={2} height={50} width={50}>
           <Image
-            src="./icons/logo.svg"
             alt="BrewHaha Logo"
             naturalHeight={1}
             naturalWidth={1}
+            src="./icons/logo.svg"
           />
         </Box>
         <Heading size="xs" color="orange">
@@ -32,6 +35,8 @@ const Navbar = () => (
         </Heading>
       </Box>
     </NavLink>
+
+    {/* Sign Up Link */}
     <NavLink activeClassName="active" to="/signup">
       <Text size="xl" color="white">
         Sign Up
