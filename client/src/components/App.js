@@ -19,7 +19,9 @@ const strapi = new Strapi(apiUrl);
 
 class App extends Component {
   state = {
-    brands: []
+    brands: [],
+    searchTerm:"",
+    loadingBrands: true
   };
 
   handleChange = ({value}) =>{
@@ -48,13 +50,14 @@ class App extends Component {
         }`
         }
       });
-      this.setState({ brands: response.data.brands });
+      this.setState({ brands: response.data.brands, loadingBrands: false });
     } catch (err) {
       console.log(err);
+      this.setState({ loadingBrands: false})
     }
   }
   render() {
-    const { searchTerm } = this.state;
+    const { searchTerm, loadingBrands } = this.state;
     return (
       <Container>
         <Box display="flex" justifyContent="center" marginTop={4}>
